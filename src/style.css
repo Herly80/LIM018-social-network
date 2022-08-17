@@ -1,0 +1,27 @@
+body {
+    background-color: aquamarine;
+}
+.container {
+    position: relative;
+    height: 600px;
+    width: 360px;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+    margin: 200px auto;
+    border-radius: 20px;
+    box-shadow: 5px 8px 12px black;
+}
+.container img {
+    height: 600px;
+}
+.container p {
+    font-size: 3rem;
+    color: white;
+    position: absolute;
+    top: 30%;
+    transform: translate -50% -50%;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+
