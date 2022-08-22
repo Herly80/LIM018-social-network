@@ -1,7 +1,16 @@
 body {
-    background-color: aquamarine;
+    background-image: url("img/s-tsuchiya-kDp2CuENruo-unsplash.jpg");
+    background-size: cover;
+
+}
+body footer {
+    font-size: 1.5rem;
+    color: white;
 }
 .container {
+    background-image: url("img/tips saludables.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
     height: 600px;
     width: 360px;
@@ -11,9 +20,26 @@ body {
     margin: 200px auto;
     border-radius: 20px;
     box-shadow: 5px 8px 12px black;
+    padding: 10px;
 }
-.container img {
-    height: 600px;
+.container button {
+    position: absolute;
+    background-color: yellowgreen;
+    font-size: 1.4rem;
+    top: 500px;
+    padding: 5px;
+    text-align: center;
+   
+
+}
+.container a {
+    position: absolute;
+    font-family: monospace;
+    top: 580px;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+
 }
 .container p {
     font-size: 3rem;
@@ -21,7 +47,9 @@ body {
     position: absolute;
     top: 30%;
     transform: translate -50% -50%;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
+
+
 
 
