@@ -1,18 +1,20 @@
-// importar todas tus vistas
+// importar todas mis vistas
+import { components } from "../lib/index.js";
 
 const changeView = (route) => {
   const root = document.querySelector("#root");
-
+  root.innerHTML = "";
   switch (route) {
-    case "#/home":
-      root.textContent = "home"; // renderizas las vistas dentro del root
-      break;
-    case "#/register":
-      root.textContent = "register"; // renderizas las vistas dentro del root
-      break;
+    // eslint-disable-next-line no-lone-blocks
+    case "#/home": { return root.appendChild(components.viewHome()); }
+    // eslint-disable-next-line no-lone-blocks
+    case "#/register": { return root.appendChild(components.viewRegist()); }
+    // root.textContent = "home"; // renderizar las vistas dentro del root
     default:
-      root.textContent = "404";
-  }
+      break;
 
+      // root.textContent = "404";
+  }
+  
 };
 export { changeView };

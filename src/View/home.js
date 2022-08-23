@@ -1,10 +1,11 @@
-export function initSesion() {
-  const btninit = document.getElementsByClassName("#iniciar");
-  const registrar = document.getElementById("regist");
+export default () => {
+  const viewHome = `
+  <p>Tips Saludables</p>
+  <button class="iniciar">Iniciar Sesión</button>
+  <a id= "regist" href="#/register">Registrarse</a>`;
 
   const cajaPrincipal = document.createElement("div");
-  cajaPrincipal.innerHTML = btninit;
-  cajaPrincipal.innerHTML = registrar;
+  cajaPrincipal.innerHTML = viewHome;
 
   return cajaPrincipal;
-}
+};
