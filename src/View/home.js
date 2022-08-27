@@ -1,8 +1,14 @@
 export default () => {
   const viewHome = `
-  <p>Tips Saludables</p>
+  <div>
+  <p>Tribu Saludable</p>
+  </div>
+  <input type="email" name="" id="correo" placeholder="E-mail">
+  <input type="password" name="" id="contraseña" placeholder="Contraseña">
   <button class="iniciar">Iniciar Sesión</button>
-  <a id= "regist" href="#/register">Registrarse</a>`;
+  <button id= "ingGoogle" class="ingGoogle">Ingresa con Google</button>
+  <p id=pregunta>¿No tienes Cuenta?</p>
+  <a id= "regist" href="#/register">Registrate aqui</a>`;
 
   const cajaPrincipal = document.createElement("div");
   cajaPrincipal.innerHTML = viewHome;
