@@ -1,6 +1,7 @@
 body {
     background-image: url("img/s-tsuchiya-kDp2CuENruo-unsplash.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
 
 }
 body footer {
@@ -22,16 +23,20 @@ body footer {
     box-shadow: 5px 8px 12px black;
     padding: 10px;
 }
-.container button {
+.boxForm button {
     position: absolute;
-    background-color: yellowgreen;
-    font-size: 1.2rem;
+    background: rgba (#cbccce);
+    border: none;
+    font-size: 18px;
+    letter-spacing: 1px;
     top: 55%;
     padding: 10px;
     text-align: center;
     border-radius: 20px;
     width: 180px;
-    right: 40%;
+    height: 43px;
+    right:35%;
+    cursor: pointer;
    
 
 }
@@ -44,13 +49,15 @@ body footer {
     text-align: center;
 
 }
-.container p {
+.boxForm h1 {
     font-size: 4rem;
     color: white;
     position: absolute;
-    right: 28%;
-    top: 10%;
+    text-align: center;
+    justify-content: center;
+    letter-spacing: 3px;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    right: 85px;
 }
 #regGoogle {
     color: black;
@@ -59,13 +66,6 @@ body footer {
     top: 65%;
     background-color: white;
     right: 36%;
-}
-#regFacebook {
-    color: black;
-    width: 400px;
-    top: 300px;
-    background-color: white;
-    right: 12%;
 }
 #cuenta {
     font-size: 2.5rem;
@@ -79,133 +79,65 @@ body footer {
 #go {
     right: 4%;
 }
-#cuentaGoogle {
-    font-size: 2.5rem;
-    color: white;
-    text-align: center;
-}
-#cuentaAcceder {
-    font-size: 2rem;
-    color: white;
-    text-align: center;
-}
-#tuCuenta {
-    font-size: 2rem;
-    color: white;
-    text-align: center;
-}
-#acces {
-    display: block;
-    position: absolute;
-    right: 25%;
-    border-radius: 20px;
-    padding: 10px;
-    width: 250px;
-    height: 25px;
-    font-size: 1rem;
-}
-#password {
-    display: block;
-    position: absolute;
-    top: 43%;
-    right: 25%;
-    border-radius: 20px;
-    padding: 10px;
-    width: 250px;
-    height: 25px;
-    font-size: 1rem;
-}
-#sesion {
-    top: 55%;
-    background-color: yellowgreen;
-    font-size: 1.4rem;
-    padding: 10px;
-    border-radius: 20px;
-    width: 160px;
-    height: 45px;
-    right: 36%;
-    
-}
-#log {
-    right: 4%;
-}
-#loguear {
-    right: 4%;
-}
-#login {
-    display: block;
-    position: absolute;
-    right: 25%;
-    top: 15%;
-    border-radius: 20px;
-    padding: 10px;
-    width: 250px;
-    height: 25px;
-    font-size: 1rem;
-}
-#clave {
-    display: block;
-    position: absolute;
-    top: 25%;
-    right: 25%;
-    border-radius: 20px;
-    padding: 10px;
-    width: 250px;
-    height: 25px;
-    font-size: 1rem;
-}
 #ingGoogle {
-    top: 70%;
-    width: 260px;
-    height: 50px;
-    right: 35%;
-    background-color: white;
-}
-#ingFacebook {
-    top: 60%;
-    width: 400px;
-    right: 12%;
-    background-color: white;
-}
-#enter {
-    top: 35%;
     position: absolute;
-    background-color: yellowgreen;
-    font-size: 1.4rem;
+    background: rgba (#cbccce);
+    border: none;
+    font-size: 18px;
+    letter-spacing: 1px;
+    top: 70%;
     padding: 10px;
+    text-align: center;
     border-radius: 20px;
-    width: 200px;
-    right: 32%;
+    width: 260px;
+    height: 43px;
+    right:29%;
+    cursor: pointer;
 }
 #regist {
-    right: 41%
+    right: 37%
 }
 #correo {
     display: block;
     position: absolute;
-    right: 35%;
+    right: 25%;
     top: 35%;
     border-radius: 20px;
     padding: 10px;
-    width: 250px;
+    width: 300px;
     height: 25px;
-    font-size: 1rem;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: #666;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba (255, 255, 255, 0.5);
 }
 #contraseña {
     display: block;
     position: absolute;
+    right: 25%;
     top: 45%;
-    right: 35%;
     border-radius: 20px;
     padding: 10px;
-    width: 250px;
+    width: 300px;
     height: 25px;
-    font-size: 1rem;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: #797474;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba (255, 255, 255, 0.5);
 }
 #pregunta {
     font-size: 1.2rem;
-    top: 75%;
-    right: 41%;
+    text-align: center;
+    position:absolute;
+    top: 77%;
+    color: white;
+    right: 37%;
 }
 #name {
     display: block;
@@ -240,4 +172,16 @@ body footer {
     height: 25px;
     font-size: 1rem;
 }
-  
+.boxForm {
+    position: absolute;
+    width: 650px;
+    height: 700px;
+    display: flex;
+    background: rgba (255,255,255,0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px
+    border: 1px solid rgba (255, 255, 255, 0.5);
+    margin: 30px 125px 20px
+    
+} 

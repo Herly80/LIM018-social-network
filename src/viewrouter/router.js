@@ -12,11 +12,6 @@ const changeView = (route) => {
     case "#/register":
     { return root.appendChild(components.viewRegist()); }
     // root.textContent = "home"; // renderizar las vistas dentro del root
-    case "#/access":
-    { return root.appendChild(components.viewAccess()); }
-
-    case "#/login":
-    { return root.appendChild(components.viewLogin()); }
     default:
 
       // root.textContent = "404";
