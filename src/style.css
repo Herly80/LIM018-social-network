@@ -12,6 +12,8 @@ body footer {
     background-image: url("img/tips saludables.webp");
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: rgb(50, 50, 50, 0.9);
+    background-blend-mode: soft-light;
     position: relative;
     height: 760px;
     width: 900px;
@@ -109,7 +111,7 @@ body footer {
     font-size: 17px;
     letter-spacing: 1px;
     color: #666;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
     border: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba (255, 255, 255, 0.5);
@@ -126,10 +128,15 @@ body footer {
     font-size: 17px;
     letter-spacing: 1px;
     color: #797474;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
     border: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba (255, 255, 255, 0.5);
+}
+::placeholder {
+    color:aliceblue;
+    letter-spacing: 1px;
+    padding-left: 15px;
 }
 #pregunta {
     font-size: 1.2rem;
