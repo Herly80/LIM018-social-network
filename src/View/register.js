@@ -8,7 +8,7 @@ export default () => {
   <input type="name" name="" class="input" id="name" placeholder="Nombre">
   <input type="email" name="" class= "input" id="emailReg" placeholder="E-mail">
   <input type="password" name="" class="input" id="passwordReg" placeholder="Contraseña">
-  <button class="registrar">Registrarme</button>
+  <button class="registrar" id="registUser">Registrarme</button>
   <button id= "regGoogle" class="regGoogle">Registrarme con Google</button>
   </form>
   </div> `;
@@ -18,3 +18,4 @@ export default () => {
 
   return cajaPrincipal;
 };
+

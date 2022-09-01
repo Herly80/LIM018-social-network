@@ -1,5 +1,5 @@
 // importar todas mis vistas
-import { components } from "../lib/index.js";
+import { components, btnRegister} from "../lib/index.js";
 
 // eslint-disable-next-line consistent-return
 const changeView = (route) => {
@@ -7,14 +7,22 @@ const changeView = (route) => {
   root.innerHTML = "";
   switch (route) {
     case "#/home":
-    { return root.appendChild(components.viewHome()); }
+    {
+      root.appendChild(components.viewHome());
+      return;
+    }
 
+    // eslint-disable-next-line no-fallthrough
     case "#/register":
-    { return root.appendChild(components.viewRegist()); }
-    // root.textContent = "home"; // renderizar las vistas dentro del root
-    default:
+    {
+      root.appendChild(components.viewRegist());
+      btnRegister("registUser");
+      // return;
+    }
 
-      // root.textContent = "404";
+    // root.textContent = "home"; // renderizar las vistas dentro del root
+    // eslint-disable-next-line no-fallthrough
+    default:
   }
 };
 export { changeView };
