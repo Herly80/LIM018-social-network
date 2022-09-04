@@ -9,5 +9,3 @@ const open = () => {
   window.addEventListener("hashchange", () => changeView(window.location.hash));
 };
 window.addEventListener("load", open);
-
-

@@ -1,5 +1,5 @@
 // importar todas mis vistas
-import { components, btnRegister} from "../lib/index.js";
+import { components, btnRegister } from "../lib/index.js";
 
 // eslint-disable-next-line consistent-return
 const changeView = (route) => {

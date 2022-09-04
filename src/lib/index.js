@@ -15,11 +15,10 @@ const components = {
 
 export { components };
 
-export const btnRegister = (element) => {
-  const btnRegisterUser = document.getElementById(element);
+export const btnRegister = (botonReg) => {
+  const btnRegisterUser = document.getElementById(botonReg);
   btnRegisterUser.addEventListener("click", () => {
     // eslint-disable-next-line no-alert
     alert("si me ves, es porque lo lograste");
   });
-  // eslint-disable-next-line no-console
 };
