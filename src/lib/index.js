@@ -3,7 +3,6 @@
 // export const myFunction = () => {
 
 // aqui tu codigo
-// console.log(alert('Hola mundo!'));
 // }
 import firstView from "../View/home.js";
 import secondView from "../View/register.js";
@@ -14,11 +13,19 @@ const components = {
 };
 
 export { components };
-
-export const btnRegister = (botonReg) => {
-  const btnRegisterUser = document.getElementById(botonReg);
-  btnRegisterUser.addEventListener("click", () => {
-    // eslint-disable-next-line no-alert
+// asignandole evento al fomrulario de la segunda vista
+export const signUpRegister = (enterText) => {
+  const signUpRegisterUser = document.getElementById(enterText);
+  signUpRegisterUser.addEventListener("submit", (e) => {
+    e.preventDefault();
     alert("si me ves, es porque lo lograste");
+  });
+};
+// asignandole evento al fomrulario de home
+export const singUpLogin = (formulario) => {
+  const singUpLoginUser = document.getElementById(formulario);
+  singUpLoginUser.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert("Funciona!!");
   });
 };

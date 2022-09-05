@@ -1,5 +1,10 @@
 // Import the functions you need from the SDKs you need
+// eslint-disable-next-line import/no-unresolved
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+// eslint-disable-next-line import/no-unresolved
+import { } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
+// eslint-disable-next-line import/no-unresolved
+import { } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -10,7 +15,7 @@ const firebaseConfig = {
   projectId: "social-network-bc0e7",
   storageBucket: "social-network-bc0e7.appspot.com",
   messagingSenderId: "702892591009",
-  appId: "1:702892591009:web:48decc067c011246216de0"
+  appId: "1:702892591009:web:48decc067c011246216de0",
 };
 
 // Initialize Firebase

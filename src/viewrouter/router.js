@@ -1,5 +1,6 @@
 // importar todas mis vistas
-import { components, btnRegister } from "../lib/index.js";
+// eslint-disable-next-line import/named
+import { components, signUpRegister, singUpLogin } from "../lib/index.js";
 
 // eslint-disable-next-line consistent-return
 const changeView = (route) => {
@@ -9,6 +10,7 @@ const changeView = (route) => {
     case "#/home":
     {
       root.appendChild(components.viewHome());
+      singUpLogin("loginForm");
       return;
     }
 
@@ -16,8 +18,8 @@ const changeView = (route) => {
     case "#/register":
     {
       root.appendChild(components.viewRegist());
-      btnRegister("registUser");
-      // return;
+      signUpRegister("signUpForm");
+      // btnRegister es a modo de prueba de que el boton recibe el evento
     }
 
     // root.textContent = "home"; // renderizar las vistas dentro del root
