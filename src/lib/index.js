@@ -6,25 +6,34 @@
 // }
 import firstView from "../View/home.js";
 import secondView from "../View/register.js";
+// import { myFunction } from "./firebase.js";
 
 const components = {
   viewHome: firstView,
-  viewRegist: secondView,
+  viewRegister: secondView,
 };
 
 export { components };
+
 // asignandole evento al fomrulario de la segunda vista
-export const signUpRegister = (enterText) => {
-  const signUpRegisterUser = document.getElementById(enterText);
-  signUpRegisterUser.addEventListener("submit", (e) => {
+export const signUpRegister = (formulario) => {
+  const signUpForm = document.getElementById(formulario);
+  signUpForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    alert("si me ves, es porque lo lograste");
+    const signUpName = document.getElementById("name").value;
+    const signUpEmail = document.getElementById("emailReg").value;
+    const signUpPassword = document.getElementById("passwordReg").value;
+    console.log(signUpName);
+    console.log(signUpEmail);
+    console.log(signUpPassword);
+    // myFunction(u,re).then((result)=>
   });
 };
+
 // asignandole evento al fomrulario de home
-export const singUpLogin = (formulario) => {
-  const singUpLoginUser = document.getElementById(formulario);
-  singUpLoginUser.addEventListener("submit", (e) => {
+export const signUpLogin = (formulario) => {
+  const signUpLoginUser = document.getElementById(formulario);
+  signUpLoginUser.addEventListener("submit", (e) => {
     e.preventDefault();
     alert("Funciona!!");
   });
