@@ -7,10 +7,10 @@ const changeView = (route) => {
   const root = document.querySelector("#root");
   root.innerHTML = "";
   switch (route) {
-    case "#/home":
+    case "":
     {
       root.appendChild(components.viewHome());
-      signUpLogin("loginForm");
+      signUpLogin("loginUser");
       return;
     }
 
@@ -18,7 +18,7 @@ const changeView = (route) => {
     case "#/register":
     {
       root.appendChild(components.viewRegister());
-      signUpRegister("signUpForm");
+      signUpRegister("registUser");
       // a modo de prueba a ver si el formulario recibe los eventos
     }
 

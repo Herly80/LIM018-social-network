@@ -1,6 +1,6 @@
 export default () => {
   const viewregist = `
-  <a href="#/home">Inicio</a>
+  <a href="">Inicio</a>
   <a href="#/access" id="go">Adelante</a>
   <div class="boxForm">
   <h1 id= "cuenta" >Registrate aqui</h1>
@@ -18,4 +18,3 @@ export default () => {
 
   return cajaPrincipal;
 };
-// <button class="registrar" id="registUser">Registrarme</button>

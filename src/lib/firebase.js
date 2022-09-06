@@ -2,9 +2,10 @@
 // eslint-disable-next-line import/no-unresolved
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
 // eslint-disable-next-line import/no-unresolved
-import { } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
-// eslint-disable-next-line import/no-unresolved
-import { } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "https:/www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
+
+// import { } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -21,6 +22,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// export const myFunction =() => {
-//   return createUserWithEmailAndPassword(email,password)
-// }
+const auth = getAuth(app);
+
+export { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword };
