@@ -250,3 +250,7 @@ body footer {
     right:35%;
     cursor: pointer;
 }
+#timeline {
+    color: white;
+    font-size: 2rem;
+}

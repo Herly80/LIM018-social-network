@@ -1,15 +1,18 @@
 import firstView from "../View/home.js";
 import secondView from "../View/register.js";
+import threeView from "../View/post.js";
 import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "./firebase.js";
 
+// creando objetos con las vistas para exportarlas a router.js
 const components = {
   viewHome: firstView,
   viewRegister: secondView,
+  viewPost: threeView,
 };
 
 export { components };
 
-// asignandole evento al fomrulario de la segunda vista
+// asignandole evento al boton Registrar de la segunda vista
 export const signUpRegister = (btn) => {
   const signUpBotonRegister = document.getElementById(btn);
   signUpBotonRegister.addEventListener("click", (e) => {
@@ -17,13 +20,14 @@ export const signUpRegister = (btn) => {
     // const signUpName = document.getElementById("name").value;
     const signUpEmail = document.getElementById("emailReg").value;
     const signUpPassword = document.getElementById("passwordReg").value;
+    // input del formulario para registrar
     // console.log(signUpEmail, signUpPassword);
 
     createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
 
       .then((userCredential) => {
         // registrado
-        console.log("usuario registrado!!");
+        alert("usuario registrado!!");
         const user = userCredential.user;
         // ...
       })
@@ -35,7 +39,7 @@ export const signUpRegister = (btn) => {
   });
 };
 
-// asignandole evento al fomrulario de home
+// asignandole evento al boton de home para iniciar sesion
 export const signUpLogin = (boton) => {
   const signUpLoginUser = document.getElementById(boton);
   signUpLoginUser.addEventListener("click", (e) => {
@@ -47,7 +51,7 @@ export const signUpLogin = (boton) => {
 
       .then((userCredential) => {
         // logueado
-        console.log("usuario logueado!!");
+        alert("usuario logueado!!");
         const user = userCredential.user;
         // ...
       })
@@ -56,5 +60,15 @@ export const signUpLogin = (boton) => {
         const errorMessage = error.message;
         // ..
       });
+  });
+};
+// asignando evento para capturar datos del textarea de la vista post
+export const sendComment = (comentario) => {
+  const sendCommentText = document.getElementById(comentario);
+  sendCommentText.addEventListener("click", (e) => {
+    e.preventDefault();
+    const writeComment = document.getElementById("textPost").value;
+    // input del texTarea para comentar
+    console.log(writeComment);
   });
 };

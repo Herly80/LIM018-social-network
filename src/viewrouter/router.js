@@ -1,6 +1,6 @@
 // importar todas mis vistas
 // eslint-disable-next-line import/named
-import { components, signUpRegister, signUpLogin } from "../lib/index.js";
+import { components, signUpRegister, signUpLogin, sendComment } from "../lib/index.js";
 
 // eslint-disable-next-line consistent-return
 const changeView = (route) => {
@@ -19,10 +19,16 @@ const changeView = (route) => {
     {
       root.appendChild(components.viewRegister());
       signUpRegister("registUser");
+      return;
       // a modo de prueba a ver si el formulario recibe los eventos
     }
+    // eslint-disable-next-line no-fallthrough
+    case "#/post":
+    {
+      root.appendChild(components.viewPost());
+      sendComment("btnPublicar");
+    }
 
-    // root.textContent = "home"; // renderizar las vistas dentro del root
     // eslint-disable-next-line no-fallthrough
     default:
   }
