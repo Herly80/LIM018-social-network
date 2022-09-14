@@ -1,6 +1,9 @@
 // importar todas mis vistas
 // eslint-disable-next-line import/named
-import { components, signUpRegister, signUpLogin, sendComment } from "../lib/index.js";
+import
+{
+  components, signUpRegister, signUpLogin, sendComment,
+} from "../lib/index.js";
 
 // eslint-disable-next-line consistent-return
 const changeView = (route) => {
@@ -11,7 +14,7 @@ const changeView = (route) => {
     {
       root.appendChild(components.viewHome());
       signUpLogin("loginUser");
-      return;
+      break;
     }
 
     // eslint-disable-next-line no-fallthrough
@@ -19,7 +22,7 @@ const changeView = (route) => {
     {
       root.appendChild(components.viewRegister());
       signUpRegister("registUser");
-      return;
+      break;
       // a modo de prueba a ver si el formulario recibe los eventos
     }
     // eslint-disable-next-line no-fallthrough
@@ -27,6 +30,7 @@ const changeView = (route) => {
     {
       root.appendChild(components.viewPost());
       sendComment("btnPublicar");
+      break;
     }
 
     // eslint-disable-next-line no-fallthrough

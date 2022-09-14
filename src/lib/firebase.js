@@ -5,7 +5,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https:/www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
 
 // eslint-disable-next-line import/no-unresolved
-// import { getFirestore } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
+import {
+  getFirestore, collection, addDoc,
+// eslint-disable-next-line import/no-unresolved
+} from "https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -25,6 +28,19 @@ const app = initializeApp(firebaseConfig);
 // autenticacion de usuario
 const auth = getAuth(app);
 // para registrar usuario con correo y contraseña e iniciar sesión
-// const db = getFirestore(app);
+const db = getFirestore(app);
 
-export { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword };
+const createPost = (userId, comentario) => addDoc(collection(db, "post"), {
+  text: comentario,
+  usuario: userId,
+});
+const getCurrentUser = () => auth.currentUser;
+
+// export const getPost = async () => {
+//   const getPostTimeline = await getDocs(collection(db, "post"));
+//   return getPostTimeline;
+// };
+
+export {
+  auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, createPost, getCurrentUser,
+};

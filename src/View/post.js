@@ -4,7 +4,7 @@ export default () => {
   <a href="">Atrás</a>
   <div id="container-Post">
   <form id="signUpPost">
-  <textarea id="textPost" cols="40" rows="10" type="text" placeholder="Deja tu comentario..." autofocus></textarea>
+  <textarea id="textPost" cols="30" rows="8" type="text" placeholder="Deja tu comentario..." autofocus></textarea>
   <button type="click" id="btnPublicar">Publicar</button>
   </form>
   </div>`;

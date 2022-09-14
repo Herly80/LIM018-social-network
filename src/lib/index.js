@@ -1,7 +1,10 @@
 import firstView from "../View/home.js";
 import secondView from "../View/register.js";
 import threeView from "../View/post.js";
-import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "./firebase.js";
+import
+{
+  auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, createPost, getCurrentUser,
+} from "./firebase.js";
 
 // creando objetos con las vistas para exportarlas a router.js
 const components = {
@@ -14,6 +17,7 @@ export { components };
 
 // asignandole evento al boton Registrar de la segunda vista
 export const signUpRegister = (btn) => {
+  const signUpFormRegister = document.getElementById("signUpForm");
   const signUpBotonRegister = document.getElementById(btn);
   signUpBotonRegister.addEventListener("click", (e) => {
     e.preventDefault();
@@ -21,12 +25,13 @@ export const signUpRegister = (btn) => {
     const signUpEmail = document.getElementById("emailReg").value;
     const signUpPassword = document.getElementById("passwordReg").value;
     // input del formulario para registrar
-    // console.log(signUpEmail, signUpPassword);
+    // console.log(signUpName, signUpEmail, signUpPassword);
 
     createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
 
       .then((userCredential) => {
         // registrado
+        signUpFormRegister.reset(); // limpia el formulario
         alert("usuario registrado!!");
         const user = userCredential.user;
         // ...
@@ -41,6 +46,7 @@ export const signUpRegister = (btn) => {
 
 // asignandole evento al boton de home para iniciar sesion
 export const signUpLogin = (boton) => {
+  const formLogin = document.getElementById("loginForm");
   const signUpLoginUser = document.getElementById(boton);
   signUpLoginUser.addEventListener("click", (e) => {
     e.preventDefault();
@@ -51,24 +57,31 @@ export const signUpLogin = (boton) => {
 
       .then((userCredential) => {
         // logueado
+        formLogin.reset(); // limpia el formulario
         alert("usuario logueado!!");
         const user = userCredential.user;
-        // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        // ..
+        formLogin.reset();
+        alert(errorCode);
+        alert(errorMessage);
       });
   });
 };
+
 // asignando evento para capturar datos del textarea de la vista post
 export const sendComment = (comentario) => {
   const sendCommentText = document.getElementById(comentario);
   sendCommentText.addEventListener("click", (e) => {
     e.preventDefault();
+
     const writeComment = document.getElementById("textPost").value;
-    // input del texTarea para comentar
-    console.log(writeComment);
+    const user = getCurrentUser();
+    const userId = user.uid;
+    // publicar con el usuario logueado
+    createPost(userId, writeComment);
+    alert("Su mensaje ha sido creado");
   });
 };
