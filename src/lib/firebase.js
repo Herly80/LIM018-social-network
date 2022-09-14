@@ -6,7 +6,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 
 // eslint-disable-next-line import/no-unresolved
 import {
-  getFirestore, collection, addDoc,
+  getFirestore, collection, addDoc, getDocs,
 // eslint-disable-next-line import/no-unresolved
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js";
 
@@ -36,10 +36,13 @@ const createPost = (userId, comentario) => addDoc(collection(db, "post"), {
 });
 const getCurrentUser = () => auth.currentUser;
 
-// export const getPost = async () => {
-//   const getPostTimeline = await getDocs(collection(db, "post"));
-//   return getPostTimeline;
-// };
+// ésto me permite leer el texto que ingresa el usuario y su id en la consola
+const querySnapshot = getDocs(collection(db, "post"));
+querySnapshot.then((docs) => {
+  docs.forEach((doc) => {
+    console.log(doc.id, " => ", doc.data());
+  });
+});
 
 export {
   auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, createPost, getCurrentUser,

@@ -59,7 +59,7 @@ export const signUpLogin = (boton) => {
         // logueado
         formLogin.reset(); // limpia el formulario
         alert("usuario logueado!!");
-        const user = userCredential.user;
+        // const user = userCredential.user;
       })
       .catch((error) => {
         const errorCode = error.code;
