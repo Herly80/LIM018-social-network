@@ -7,6 +7,7 @@ export default () => {
   <textarea id="textPost" cols="30" rows="8" type="text" placeholder="Deja tu comentario..." autofocus></textarea>
   <button type="click" id="btnPublicar">Publicar</button>
   </form>
+  <div id="containerPostUser"></div>
   </div>`;
 
   const containerPost = document.createElement("div");

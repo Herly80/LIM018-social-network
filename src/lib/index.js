@@ -4,6 +4,7 @@ import threeView from "../View/post.js";
 import
 {
   auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, createPost, getCurrentUser,
+  getTask,
 } from "./firebase.js";
 
 // creando objetos con las vistas para exportarlas a router.js
@@ -59,7 +60,7 @@ export const signUpLogin = (boton) => {
         // logueado
         formLogin.reset(); // limpia el formulario
         alert("usuario logueado!!");
-        // const user = userCredential.user;
+        const user = userCredential.user;
       })
       .catch((error) => {
         const errorCode = error.code;
