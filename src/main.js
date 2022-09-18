@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import { changeView } from "./viewrouter/router.js";
-import { onGetPost } from "../lib/firebase.js";
+import { onGetPost, deletePost } from "../lib/firebase.js";
 // Este es el punto de entrada de tu aplicacion
 // import { myFunction } from './lib/index.js';
 
@@ -27,8 +27,15 @@ window.addEventListener("DOMContentLoaded", async () => { // se ha cargado por c
         <div>
         <label for="name">${idUser.usuario}</label>
         <textarea id="textPost" cols="30" rows="8" type="text" placeholder="Deja tu comentario..." autofocus>${post.text}</textarea>
+        <button class="btnDelete" data-id="${idUser}">Eliminar</button>
         </div>`;
     });
     containerPostUser.innerHTML = showPost; // lo pinto en el navegador
+    const btnsDelete = containerPostUser.querySelectorAll(".btnDelete");
+    btnsDelete.forEach((btn) => {
+      btn.addEventListener("click", ({ target: { dataset } }) => {
+        deletePost(dataset.id);
+      });
+    });
   });
 });

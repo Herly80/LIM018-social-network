@@ -6,7 +6,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 
 // eslint-disable-next-line import/no-unresolved
 import {
-  getFirestore, collection, addDoc, getDocs, onSnapshot,
+  getFirestore, collection, addDoc, getDocs, onSnapshot, deleteDoc, doc,
 // eslint-disable-next-line import/no-unresolved
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js";
 
@@ -43,11 +43,13 @@ const getCurrentUser = () => auth.currentUser;
 //     console.log(doc.id, " => ", doc.data());
 //   });
 // });
-const getTask = () => getDocs(collection(db, "post"));
+const getTask = () => getDocs(collection(db, "post")); // sirve solo una vez
 
-const onGetPost = (callback) => onSnapshot(collection(db, "post"), callback);
+const onGetPost = (callback) => onSnapshot(collection(db, "post"), callback); // escuchar en tiempo real
+
+const deletePost = (id) => deleteDoc(doc(db, "post", id));
 
 export {
   auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, createPost, getCurrentUser,
-  getTask, onGetPost,
+  getTask, onGetPost, deletePost,
 };
