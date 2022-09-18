@@ -6,7 +6,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 
 // eslint-disable-next-line import/no-unresolved
 import {
-  getFirestore, collection, addDoc, getDocs,
+  getFirestore, collection, addDoc, getDocs, onSnapshot,
 // eslint-disable-next-line import/no-unresolved
 } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js";
 
@@ -45,7 +45,9 @@ const getCurrentUser = () => auth.currentUser;
 // });
 const getTask = () => getDocs(collection(db, "post"));
 
+const onGetPost = (callback) => onSnapshot(collection(db, "post"), callback);
+
 export {
   auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, createPost, getCurrentUser,
-  getTask,
+  getTask, onGetPost,
 };
