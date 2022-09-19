@@ -22,19 +22,27 @@ window.addEventListener("DOMContentLoaded", async () => { // se ha cargado por c
     querySnapshot.forEach((doc) => { // ésto cuando se cumpla la promesa y recorrer 1 a 1 los datos
       // console.log(doc.id, " => ", doc.data());
       const post = doc.data();
-      const idUser = doc.id;
+      const idDoc = doc.id;
       showPost += `
         <div>
-        <label for="name">${idUser.usuario}</label>
-        <textarea id="textPost" cols="30" rows="8" type="text" placeholder="Deja tu comentario..." autofocus>${post.text}</textarea>
-        <button class="btnDelete" data-id="${idUser}">Eliminar</button>
+        <label for="name">${post.usuario}</label>
+        <textarea id="textPost" cols="25" rows="6" type="text">${post.text}</textarea>
+        <button class="btnDelete" data-id="${idDoc}">Eliminar</button>
+        <button class="btnEdit" data-id="${idDoc}">Editar</button>
         </div>`;
     });
     containerPostUser.innerHTML = showPost; // lo pinto en el navegador
+
     const btnsDelete = containerPostUser.querySelectorAll(".btnDelete");
     btnsDelete.forEach((btn) => {
       btn.addEventListener("click", ({ target: { dataset } }) => {
         deletePost(dataset.id);
+      });
+    });
+    const btnsEdit = containerPostUser.querySelectorAll(".btnEdit");
+    btnsEdit.forEach((btn) => {
+      btn.addEventListener("click", ({ target: { dataset } }) => {
+        console.log(dataset.id);
       });
     });
   });

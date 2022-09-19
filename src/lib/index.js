@@ -59,7 +59,7 @@ export const signUpLogin = (boton) => {
       .then((userCredential) => {
         // logueado
         formLogin.reset(); // limpia el formulario
-        alert("usuario logueado!!");
+        alert("Ha iniciado sesión!!");
         const user = userCredential.user;
       })
       .catch((error) => {
@@ -77,7 +77,6 @@ export const sendComment = (comentario) => {
   const sendCommentText = document.getElementById(comentario);
   sendCommentText.addEventListener("click", (e) => {
     e.preventDefault();
-
     const writeComment = document.getElementById("textPost").value;
     const user = getCurrentUser();
     const userId = user.uid;

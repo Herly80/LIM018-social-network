@@ -34,15 +34,9 @@ const createPost = (userId, comentario) => addDoc(collection(db, "post"), {
   text: comentario,
   usuario: userId,
 });
+
 const getCurrentUser = () => auth.currentUser;
 
-// ésto me permite leer el texto que ingresa el usuario y su id en la consola
-// const querySnapshot = getDocs(collection(db, "post"));
-// querySnapshot.then((docs) => { // realiza una accion cuando la promesa se cumpla(callback-doc)
-//   docs.forEach((doc) => { // vas a realizar ésto para cuando se cumpla la promesa.
-//     console.log(doc.id, " => ", doc.data());
-//   });
-// });
 const getTask = () => getDocs(collection(db, "post")); // sirve solo una vez
 
 const onGetPost = (callback) => onSnapshot(collection(db, "post"), callback); // escuchar en tiempo real
