@@ -1,7 +1,7 @@
 export default () => {
   const viewPost = `
-  <h1 id= "timeline">Comentame Algo</h1>
-  <a href="">Atrás</a>
+  <h1 id= "timeline">Comentame Algo!!</h1>
+  <a href="#/home">Atrás</a>
   <button type="click" id="btnLogout">Cerrar Sesión</button>
   <div id="container-Post">
   <form id="signUpPost">

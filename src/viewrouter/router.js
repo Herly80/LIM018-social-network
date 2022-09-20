@@ -10,7 +10,7 @@ const changeView = (route) => {
   const root = document.querySelector("#root");
   root.innerHTML = "";
   switch (route) {
-    case "":
+    case "#/home":
     {
       root.appendChild(components.viewHome());
       signUpLogin("loginUser");
@@ -34,7 +34,10 @@ const changeView = (route) => {
     }
 
     // eslint-disable-next-line no-fallthrough
-    default:
+    default: {
+      root.appendChild(components.viewHome());
+      signUpLogin("loginUser");
+    }
   }
 };
 export { changeView };

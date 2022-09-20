@@ -22,7 +22,7 @@ export const signUpRegister = (btn) => {
   const signUpBotonRegister = document.getElementById(btn);
   signUpBotonRegister.addEventListener("click", (e) => {
     e.preventDefault();
-    // const signUpName = document.getElementById("name").value;
+    const signUpName = document.getElementById("name").value;
     const signUpEmail = document.getElementById("emailReg").value;
     const signUpPassword = document.getElementById("passwordReg").value;
     // input del formulario para registrar
@@ -35,7 +35,8 @@ export const signUpRegister = (btn) => {
         signUpFormRegister.reset(); // limpia el formulario
         alert("usuario registrado!!");
         const user = userCredential.user;
-        // ...
+        const userName = signUpName;
+        console.log(user, userName);
       })
       .catch((error) => {
         const errorCode = error.code;

@@ -1,6 +1,6 @@
 export default () => {
   const viewregist = `
-  <a href="">Inicio</a>
+  <a href="#/home">Iniciar Sesión</a>
   <a href="#/post" id="go">Adelante</a>
   <div class="boxForm">
   <h1 id= "cuenta" >Registrate aqui</h1>
