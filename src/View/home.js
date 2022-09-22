@@ -1,5 +1,6 @@
 export default () => {
   const viewHome = `
+  <a href="#/post">Publicar</a>
   <div class="boxForm">
   <h1>Tribu Saludable</h1>
   <form id="loginForm">

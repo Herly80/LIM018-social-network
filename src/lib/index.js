@@ -4,7 +4,7 @@ import threeView from "../View/post.js";
 import
 {
   auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, createPost, getCurrentUser,
-  getTask,
+
 } from "./firebase.js";
 
 // creando objetos con las vistas para exportarlas a router.js
@@ -33,6 +33,7 @@ export const signUpRegister = (btn) => {
       .then((userCredential) => {
         // registrado
         signUpFormRegister.reset(); // limpia el formulario
+        // eslint-disable-next-line no-alert
         alert("usuario registrado!!");
         const user = userCredential.user;
         const userName = signUpName;
@@ -41,6 +42,10 @@ export const signUpRegister = (btn) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        // eslint-disable-next-line no-alert
+        alert(errorCode);
+        // eslint-disable-next-line no-alert
+        alert(errorMessage);
         // ..
       });
   });
@@ -60,14 +65,18 @@ export const signUpLogin = (boton) => {
       .then((userCredential) => {
         // logueado
         formLogin.reset(); // limpia el formulario
+        // eslint-disable-next-line no-alert
         alert("Ha iniciado sesión!!");
         const user = userCredential.user;
+        console.log(user);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         formLogin.reset();
+        // eslint-disable-next-line no-alert
         alert(errorCode);
+        // eslint-disable-next-line no-alert
         alert(errorMessage);
       });
   });
@@ -83,6 +92,7 @@ export const sendComment = (comentario) => {
     const userId = user.uid;
     // publicar con el usuario logueado
     createPost(userId, writeComment);
+    // eslint-disable-next-line no-alert
     alert("Su mensaje ha sido creado");
   });
 };
