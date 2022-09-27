@@ -214,7 +214,7 @@ body footer {
     background: rgba (255,255,255,0.2);
     border-radius: 10px;
     backdrop-filter: blur(5px);
-    box-shadow: 0 25px 45px
+    box-shadow: 0 25px 45px;
     border: 1px solid rgba (255, 255, 255, 0.5);
     margin: 30px 125px 20px
 } 

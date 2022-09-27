@@ -3,8 +3,8 @@ import secondView from "../View/register.js";
 import threeView from "../View/post.js";
 import
 {
-  auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, createPost, getCurrentUser,
-
+  auth, signInWithEmailAndPassword, createPost, getCurrentUser,
+  createUser,
 } from "./firebase.js";
 
 // creando objetos con las vistas para exportarlas a router.js
@@ -28,14 +28,14 @@ export const signUpRegister = (btn) => {
     // input del formulario para registrar
     // console.log(signUpName, signUpEmail, signUpPassword);
 
-    createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
-
+    createUser(signUpEmail, signUpPassword)
       .then((userCredential) => {
         // registrado
         signUpFormRegister.reset(); // limpia el formulario
         // eslint-disable-next-line no-alert
         alert("usuario registrado!!");
         const user = userCredential.user;
+        window.location.href = "#home";
         const userName = signUpName;
         console.log(user, userName);
       })
@@ -68,6 +68,7 @@ export const signUpLogin = (boton) => {
         // eslint-disable-next-line no-alert
         alert("Ha iniciado sesión!!");
         const user = userCredential.user;
+        window.location.href = "#post";
         console.log(user);
       })
       .catch((error) => {
@@ -81,6 +82,16 @@ export const signUpLogin = (boton) => {
       });
   });
 };
+// const btnLogout = document.querySelector("#btnLogout");
+// btnLogout.addEventListener("click", () => {
+//   signOut(auth);
+//     .then(() => {
+//       alert("Se ha cerrado sesión");
+//     })
+//     .catch((err) => {
+//       alert(err.message);
+//     })
+// })
 
 // asignando evento para capturar datos del textarea de la vista post
 export const sendComment = (comentario) => {

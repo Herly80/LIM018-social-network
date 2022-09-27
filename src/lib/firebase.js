@@ -1,8 +1,11 @@
+/* eslint-disable import/no-unresolved */
 // Import the functions you need from the SDKs you need
-// eslint-disable-next-line import/no-unresolved
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
 // eslint-disable-next-line import/no-unresolved
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https:/www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
+import {
+  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut,
+// eslint-disable-next-line import/no-unresolved
+} from "https:/www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
 
 // eslint-disable-next-line import/no-unresolved
 import {
@@ -30,6 +33,8 @@ const auth = getAuth(app);
 // para registrar usuario con correo y contraseña e iniciar sesión
 const db = getFirestore(app);
 
+const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);
+
 const createPost = (userId, comentario) => addDoc(collection(db, "post"), {
   text: comentario,
   usuario: userId,
@@ -45,5 +50,5 @@ const deletePost = (id) => deleteDoc(doc(db, "post", id));
 
 export {
   auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, createPost, getCurrentUser,
-  getTask, onGetPost, deletePost,
+  getTask, onGetPost, deletePost, signOut, createUser,
 };
