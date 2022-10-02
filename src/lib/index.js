@@ -17,9 +17,9 @@ const components = {
 export { components };
 
 // asignandole evento al boton Registrar de la segunda vista
-export const signUpRegister = (btn) => {
+export const signUpRegister = () => {
   const signUpFormRegister = document.getElementById("signUpForm");
-  const signUpBotonRegister = document.getElementById(btn);
+  const signUpBotonRegister = document.getElementById("registUser");
   signUpBotonRegister.addEventListener("click", (e) => {
     e.preventDefault();
     const signUpName = document.getElementById("name").value;
@@ -36,17 +36,14 @@ export const signUpRegister = (btn) => {
         alert("usuario registrado!!");
         const user = userCredential.user;
         window.location.href = "#home";
-        const userName = signUpName;
+        // const userName = signUpName;
         console.log(user, userName);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        // eslint-disable-next-line no-alert
         alert(errorCode);
-        // eslint-disable-next-line no-alert
         alert(errorMessage);
-        // ..
       });
   });
 };

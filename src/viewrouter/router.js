@@ -21,7 +21,7 @@ const changeView = (route) => {
     case "#/register":
     {
       root.appendChild(components.viewRegister());
-      signUpRegister("registUser");
+      signUpRegister();
       break;
       // a modo de prueba a ver si el formulario recibe los eventos
     }

@@ -3,7 +3,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
 // eslint-disable-next-line import/no-unresolved
 import {
-  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut,
+  getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile,
 // eslint-disable-next-line import/no-unresolved
 } from "https:/www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
 

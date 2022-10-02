@@ -32,7 +32,6 @@ window.addEventListener("DOMContentLoaded", async () => { // se ha cargado por c
         </div>`;
     });
     containerPostUser.innerHTML = showPost;
-
     const btnsDelete = containerPostUser.querySelectorAll("#btnDelete");
     btnsDelete.forEach((btn) => {
       btn.addEventListener("click", ({ target: { dataset } }) => {
