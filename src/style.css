@@ -12,7 +12,7 @@ body footer {
     background-image: url("img/tips saludables.webp");
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: rgb(50, 50, 50, 0.9);
+    background-color: rgb(50, 50, 50, 0.8);
     background-blend-mode: soft-light;
     position: relative;
     height: 760px;
@@ -25,7 +25,7 @@ body footer {
     box-shadow: 5px 8px 12px black;
     padding: 10px;
 }
-.boxForm button {
+#loginUser {
     position: absolute;
     background: rgba (#cbccce);
     border: none;
@@ -46,7 +46,7 @@ body footer {
     position: absolute;
     font-family: monospace;
     top: 640px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: white;
     text-align: center;
 
@@ -62,15 +62,22 @@ body footer {
     right: 85px;
 }
 #regGoogle {
-    color: black;
+    position: absolute;
+    background: rgba (#cbccce);
+    border: none;
+    font-size: 18px;
+    letter-spacing: 1px;
+    top: 70%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
     width: 260px;
-    height: 45px;
-    top: 65%;
-    background-color: white;
-    right: 29%;
+    height: 43px;
+    right:29%;
+    cursor: pointer;
 }
 #cuenta {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: white;
     position: absolute;
     text-align: center;
@@ -83,7 +90,7 @@ body footer {
 #go {
     right: 4%;
 }
-#ingGoogle {
+#loginGoogle {
     position: absolute;
     background: rgba (#cbccce);
     border: none;
@@ -112,7 +119,7 @@ body footer {
     height: 25px;
     font-size: 17px;
     letter-spacing: 1px;
-    color: #666;
+    color: white;
     background: rgba(255, 255, 255, 0.2);
     border: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -129,7 +136,7 @@ body footer {
     height: 25px;
     font-size: 17px;
     letter-spacing: 1px;
-    color: #797474;
+    color: white;
     background: rgba(255, 255, 255, 0.2);
     border: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -176,7 +183,7 @@ body footer {
     height: 25px;
     font-size: 17px;
     letter-spacing: 1px;
-    color: #666;
+    color: white;
     background: rgba(255, 255, 255, 0.2);
     border: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -193,7 +200,7 @@ body footer {
     height: 25px;
     font-size: 17px;
     letter-spacing: 1px;
-    color: #666;
+    color: white;
     background: rgba(255, 255, 255, 0.2);
     border: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -207,7 +214,7 @@ body footer {
     background: rgba (255,255,255,0.2);
     border-radius: 10px;
     backdrop-filter: blur(5px);
-    box-shadow: 0 25px 45px
+    box-shadow: 0 25px 45px;
     border: 1px solid rgba (255, 255, 255, 0.5);
     margin: 30px 125px 20px
 } 
@@ -228,3 +235,83 @@ body footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba (255, 255, 255, 0.5);
 }
+#registUser {
+    position: absolute;
+    background: rgba (#cbccce);
+    border: none;
+    font-size: 18px;
+    letter-spacing: 1px;
+    top: 55%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    width: 180px;
+    height: 43px;
+    right:35%;
+    cursor: pointer;
+}
+#timeline {
+    color: white;
+    font-size: 3rem;
+    text-align:center;
+}
+#userTag {
+    color: black;
+}
+.boxPost {
+    width: 400px;
+    height: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(98 68 47 / 16%);
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 18px;
+    padding: 18px;
+    box-sizing: border-box;
+    color: #666;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba (255, 255, 255, 0.5);
+}
+#commentUser {
+    color:black;
+    font-style: oblique;
+}
+#signUpPost {
+    width: 400px;
+    height: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(98 68 47 / 16%);
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 18px;
+    padding: 18px;
+    box-sizing: border-box;
+    color: #666;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba (255, 255, 255, 0.5); 
+}
+#textPost {
+    height: 90px
+}
+#btnPublicar {
+    padding: 3px
+}
+#btnDelete {
+    padding: 3px 
+}
+#btnEdit {
+    padding: 3px 
+}
+
