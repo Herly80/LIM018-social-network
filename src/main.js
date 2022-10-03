@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", async () => { // se ha cargado por c
       const idDoc = doc.id;
       showPost += `
         <div class="boxPost">
-        <label for="name" id="userTag">Hola ${post.usuario}!!</label>
+        <label for="name" id="userTag">Hola ${post.displayname}!!</label>
         <p id="commentUser">${post.text}</p>
         <button id="btnDelete" data-id="${idDoc}">Eliminar</button>
         <button id="btnEdit" data-id="${idDoc}">Editar</button>
