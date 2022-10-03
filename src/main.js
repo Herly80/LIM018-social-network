@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import { changeView } from "./viewrouter/router.js";
-import { onGetPost, deletePost } from "../lib/firebase.js";
+import { onGetPost, deletePost, signOut, auth } from "../lib/firebase.js";
 // Este es el punto de entrada de tu aplicacion
 // import { myFunction } from './lib/index.js';
 
@@ -56,5 +56,6 @@ window.addEventListener("DOMContentLoaded", async () => { // se ha cargado por c
         .catch((err) => {
           alert(err.message);
         });
+    });
   });
-  )};
+});

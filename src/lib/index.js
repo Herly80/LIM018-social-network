@@ -79,16 +79,6 @@ export const signUpLogin = (boton) => {
       });
   });
 };
-// const btnLogout = document.querySelector("#btnLogout");
-// btnLogout.addEventListener("click", () => {
-//   signOut(auth);
-//     .then(() => {
-//       alert("Se ha cerrado sesión");
-//     })
-//     .catch((err) => {
-//       alert(err.message);
-//     })
-// })
 
 // asignando evento para capturar datos del textarea de la vista post
 export const sendComment = (comentario) => {
