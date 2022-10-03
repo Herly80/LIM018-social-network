@@ -44,5 +44,17 @@ window.addEventListener("DOMContentLoaded", async () => { // se ha cargado por c
         console.log(dataset.id);
       });
     });
+    const btnLogout = document.querySelector("#btnLogout");
+    btnLogout.addEventListener("click", (e) => {
+      e.preventDefault();
+      signOut(auth)
+        .then(() => {
+          // sessionStorage.clear();
+          alert("Se ha cerrado sesión");
+          window.location.hash = "#/home";
+        })
+        .catch((err) => {
+          alert(err.message);
+        });
   });
-});
+  )};
