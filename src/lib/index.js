@@ -4,7 +4,7 @@ import threeView from "../View/post.js";
 import
 {
   auth, signInWithEmailAndPassword, createPost, getCurrentUser,
-  createUser,
+  createUser, updateProfile,
 } from "./firebase.js";
 
 // creando objetos con las vistas para exportarlas a router.js
@@ -28,23 +28,26 @@ export const signUpRegister = () => {
     // input del formulario para registrar
     // console.log(signUpName, signUpEmail, signUpPassword);
 
-    createUser(signUpEmail, signUpPassword)
-      .then((userCredential) => {
-        // registrado
-        signUpFormRegister.reset(); // limpia el formulario
-        // eslint-disable-next-line no-alert
-        alert("usuario registrado!!");
-        const user = userCredential.user;
-        window.location.href = "#home";
-        // const userName = signUpName;
-        console.log(user, userName);
+    createUser(signUpEmail, signUpPassword).then((userCredential) => {
+      // registrado
+      signUpFormRegister.reset(); // limpia el formulario
+      // eslint-disable-next-line no-alert
+      alert("usuario registrado!!");
+      const user = userCredential.user;
+      window.location.href = "#home";
+      updateProfile(user, {
+        displayName: signUpName,
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorCode);
-        alert(errorMessage);
-      });
+        .then(() => {
+          // const userUpdate = user.displayName;
+          // console.log(userUpdate);
+          console.log("tu nombre fue captado");
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          alert(errorMessage);
+        });
+    });
   });
 };
 

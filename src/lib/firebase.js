@@ -50,5 +50,5 @@ const deletePost = (id) => deleteDoc(doc(db, "post", id));
 
 export {
   auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, createPost, getCurrentUser,
-  getTask, onGetPost, deletePost, signOut, createUser,
+  getTask, onGetPost, deletePost, signOut, createUser, updateProfile,
 };
