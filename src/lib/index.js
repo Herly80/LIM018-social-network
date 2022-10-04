@@ -90,7 +90,7 @@ export const sendComment = (comentario) => {
     e.preventDefault();
     const writeComment = document.getElementById("textPost").value;
     const user = getCurrentUser();
-    const userId = user.uid;
+    const userId = user.displayName;
     // publicar con el usuario logueado
     createPost(userId, writeComment);
     // eslint-disable-next-line no-alert
